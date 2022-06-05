@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -19,24 +18,30 @@
 */
 
 const cart = [
-    {
-        name: 'pizza', 
-        price: 9.99
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99
-    }
-]
+  {
+    name: "pizza",
+    price: 9.99,
+  },
+  {
+    name: "pasta",
+    price: 8.99,
+  },
+  {
+    name: "salad",
+    price: 7.99,
+  },
+];
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+let initialValue = 0;
 
+// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce(
+  (accumulator, currentValue) => accumulator + currentValue.price,
+  initialValue
+);
+console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +60,16 @@ const cart = [
 
 //CODE HERE
 
-
+function calcFinalPrice(cartTotal, couponValue, tax) {
+  tax *= cartTotal;
+  cartTotal += tax;
+  cartTotal -= couponValue;
+  let finalAmount = cartTotal;
+  return finalAmount;
+}
+console.log(calcFinalPrice(100, 5, 0.1));
+console.log(calcFinalPrice(100, 10, 0.1));
+console.log(calcFinalPrice(100, 1, 0.05));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,8 +92,16 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
-
+const restaruantCartPageExample = {
+  name: "This will be a string since names are used with strings",
+  email:
+    "this will be a string because it will be a combo of letters and numbers",
+  age: "Number, age is used with number value. Important to know the age for marketing",
+  address: "String, easier to put numbers and letters into the string value",
+  favorites: [
+    "will be an array to hold their favorite orders if they have multiple",
+  ],
+};
 */
 
 /*
@@ -88,3 +110,16 @@ const cart = [
 */
 
 //CODE HERE
+
+const jaredCartPage = {
+  name: "Jared 'The overlord' Collir",
+  email: "jaredOL@impostersyndrom.com",
+  age: 42, // LOL
+  address: "43110 miracle way, Shire, Middle Earth, 11111",
+  favorites: [
+    "plain sandwich",
+    "water with a hint of lemon",
+    "coding noobs for breakfast",
+  ],
+};
+console.log(jaredCartPage);

@@ -7,7 +7,6 @@
     and filtering those arrays. 
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Create an object called `pizza` that has 6
@@ -32,7 +31,15 @@
 
 //CODE HERE
 
-
+const pizza = {
+  name: "pepporoni",
+  price: 12.99,
+  category: "entree",
+  popularity: 1,
+  rating: 9.5,
+  tags: ["pepporoni", "family", "party", "greatest"],
+};
+// console.log(pizza);
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -44,6 +51,7 @@
 
 //CODE HERE
 
+console.log(pizza.popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -54,6 +62,7 @@
 
 //CODE HERE
 
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -64,6 +73,8 @@
 
 //CODE HERE
 
+const { price } = pizza;
+console.log(price);
 
 /*
     Fourth, and last, destructure the category
@@ -74,6 +85,8 @@
 
 //CODE HERE
 
+const { category } = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,7 +102,48 @@
 
 //CODE HERE
 
-
+const pizzaArray = [
+  {
+    name: "pepporoni",
+    price: 12.99,
+    category: "entree",
+    popularity: 1,
+    rating: 9.5,
+    tags: ["pepporoni", "family", "party", "greatest", "cheesy"],
+  },
+  {
+    name: "cheese",
+    price: 10.99,
+    category: "entree",
+    popularity: 6,
+    rating: 8,
+    tags: ["cheesy", "kids"],
+  },
+  {
+    name: "meat lovers",
+    price: 13.99,
+    category: "entree",
+    popularity: 2,
+    rating: 9.4,
+    tags: ["meaty", "delicious", "yummy"],
+  },
+  {
+    name: "margarita",
+    price: 15.99,
+    category: "entree",
+    popularity: 3,
+    rating: 9,
+    tags: ["fresh", "tomato", "thin crust"],
+  },
+  {
+    name: "cheese bread",
+    price: 4.99,
+    category: "appetizer",
+    popularity: 4,
+    rating: 8.5,
+    tags: ["cheesy", "starter"],
+  },
+];
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,10 +159,15 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = pizzaArray.filter((element) => {
+  for (let i = 0; i < pizzaArray.length; i++) {
+    if (element.tags[i] === 'cheesy') {
+      return element.tags[i];
+    }
+  }
+});
 
-
-
+console.log(filteredFood)
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -150,6 +209,10 @@
 
 //CODE HERE
 
+function filterByProperty (property, number, type) {
+    let newArr = [];
+    
+}
 
 /*
     Invoke the `filterByProperty` function passing
