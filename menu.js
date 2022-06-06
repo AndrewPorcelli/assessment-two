@@ -161,13 +161,13 @@ const pizzaArray = [
 
 const filteredFood = pizzaArray.filter((element) => {
   for (let i = 0; i < pizzaArray.length; i++) {
-    if (element.tags[i] === 'cheesy') {
+    if (element.tags[i] === "cheesy") {
       return element.tags[i];
     }
   }
 });
 
-console.log(filteredFood)
+// console.log(filteredFood);
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -209,9 +209,18 @@ console.log(filteredFood)
 
 //CODE HERE
 
-function filterByProperty (property, number, type) {
-    let newArr = [];
-    
+function filterByProperty(property, number, type) {
+  let filteredArray = [];
+
+  pizzaArray.filter(function (element, index) {
+    if (pizzaArray.element[index] > number ** type === "above") {
+      filteredArray.push(element);
+    } else if (pizzaArray.element[index] < number && type !== "below") {
+      filteredArray.push(element);
+    }
+
+    return filteredArray;
+  });
 }
 
 /*
@@ -222,3 +231,5 @@ function filterByProperty (property, number, type) {
 */
 
 //CODE HERE
+
+console.log(filterByProperty("rating", 5, "above"));
