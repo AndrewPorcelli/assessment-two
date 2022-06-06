@@ -209,19 +209,31 @@ const filteredFood = pizzaArray.filter((element) => {
 
 //CODE HERE
 
-function filterByProperty(property, number, type) {
-  let filteredArray = [];
+// function filterByProperty(property, number, type) {
+//   let filteredArray = [];
 
-  pizzaArray.filter(function (element, index) {
-    if (pizzaArray.element[index] > number ** type === "above") {
-      filteredArray.push(element);
-    } else if (pizzaArray.element[index] < number && type !== "below") {
-      filteredArray.push(element);
+//   pizzaArray.filter(function (element, index) {
+//     if (pizzaArray.element[index] > number && type === "above") {
+//       filteredArray.push(element);
+//     } else if (pizzaArray.element[index] < number && type !== "below") {
+//       filteredArray.push(element);
+//     }
+
+//     return filteredArray;
+//   });
+// }
+
+const filterByProperty = function (property, number, type) {
+  const filteredArray = pizzaArray.filter((element) => {
+    if (type === "above") {
+      return element[property] > number;
+    } else if (type === "below") {
+      return element[property] < number;
     }
-
-    return filteredArray;
   });
-}
+  return filteredArray;
+};
+console.log(filterByProperty("price", 5, "above"));
 
 /*
     Invoke the `filterByProperty` function passing
